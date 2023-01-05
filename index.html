@@ -16,11 +16,15 @@
 	div ,video , canvas {
     position: absolute;
 	}
+  video{
+    transform: rotateY(180deg);
+  }
+
   #gravity{
     z-index: 1;
   }
   .output_canvas{
-    display: none;
+    z-index: 2;
   }
 
   </style>
@@ -35,9 +39,8 @@
   </div>
 
 
-
-  <script src="./main.js"></script>
   <script src="./matter.js"></script>
-  <script src="./gravity.js"></script>
+  <script src="./gravity.js" defer></script>
+  <script src="./main.js" defer></script>
 </body>
 </html>

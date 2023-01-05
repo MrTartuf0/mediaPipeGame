@@ -22,8 +22,14 @@ var render = Render.create({
 
 // create two boxes and a ground
 var boxA = Bodies.rectangle(20, 20, 40, 40);
-var boxB = Bodies.rectangle(450, 50, 80, 80);
-var ground = Bodies.rectangle(400, 610, 410, 40, { isStatic: true });
+var boxB = Bodies.rectangle(450, 50, 80, 80 , {
+    render: {
+        sprite: {
+            texture: "./coca-cola_80x80.png",
+        }
+    }
+});
+var ground = Bodies.rectangle(300, 310, 410, 40, { isStatic: true });
 
 // add all of the bodies to the world
 Composite.add(engine.world, [boxA, boxB, ground]);

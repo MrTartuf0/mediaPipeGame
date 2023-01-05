@@ -3,11 +3,13 @@ const canvasElement = document.getElementsByClassName('output_canvas')[0];
 const canvasCtx = canvasElement.getContext('2d');
 
 function onResults(results) {
-  if(results.multiFaceLandmarks[0][0].x != undefined && results.multiFaceLandmarks[0][0].y != undefined){
-    Matter.Body.set(ground, "position", {x: results.multiFaceLandmarks[0][10].x*800 , y: results.multiFaceLandmarks[0][10].y*600})
-    console.log(results.multiFaceLandmarks[0][0].x)
+  if(results.multiFaceLandmarks[0] == undefined){
+    console.log("sei uscito fuori")
   }
-  canvasCtx.restore();
+  else{
+    Matter.Body.set(ground, "position", {x: ((1-results.multiFaceLandmarks[0][10].x)*800) , y: (results.multiFaceLandmarks[0][10].y*600)})
+  }
+
 }
 
 const faceMesh = new FaceMesh({locateFile: (file) => {
