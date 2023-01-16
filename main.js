@@ -7,8 +7,21 @@ function onResults(results) {
     console.log("sei uscito fuori")
   }
   else{
-    Matter.Body.set(ground, "position", {x: ((1-results.multiFaceLandmarks[0][10].x)*800) , y: (results.multiFaceLandmarks[0][10].y*600)})
+    // Modificare la risoluzione del canvas per il posizionamento corretto della barra
+    Matter.Body.set(ground, "position", {x: ((1-results.multiFaceLandmarks[0][10].x)*960) , y: (results.multiFaceLandmarks[0][10].y*540)})
   }
+
+  canvasCtx.save();
+  canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
+  canvasCtx.drawImage(
+      results.image, 0, 0, canvasElement.width, canvasElement.height);
+  if (results.multiFaceLandmarks) {
+    for (const landmarks of results.multiFaceLandmarks) {
+      drawConnectors(canvasCtx, landmarks, FACEMESH_TESSELATION,
+                     {color: '#C0C0C070', lineWidth: 1});
+    }
+  }
+
 
 }
 
@@ -27,7 +40,7 @@ const camera = new Camera(videoElement, {
   onFrame: async () => {
     await faceMesh.send({image: videoElement});
   },
-  width: 800,
-  height: 600
+  width: 1920,
+  height: 1080
 });
 camera.start();

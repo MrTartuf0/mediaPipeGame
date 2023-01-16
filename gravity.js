@@ -16,8 +16,8 @@ var render = Render.create({
     options: {
         background: 'transparent',
         wireframes: false,
-        width: 800,
-        height: 600,
+        width: 960,
+        height: 540,
     }
 });
 
@@ -25,6 +25,7 @@ var render = Render.create({
 
 var boxB = Bodies.rectangle(450, -100, 80, 80 , {
     friction: 0.5,
+    restitution: 0.9,
     render: {
         sprite: {
             texture: "./coca-cola_80x80.png",
@@ -78,7 +79,7 @@ var boxG = Bodies.rectangle(550, -5000, 80, 80 , {
 
 
 
-var ground = Bodies.rectangle(300, 100, 410, 40, { isStatic: true , friction: 1});
+var ground = Bodies.rectangle(300, 0, 410, 40, { isStatic: true , friction: 0.5 , restitution: 0.9});
 
 // add all of the bodies to the world
 Composite.add(engine.world, [boxB, boxC , boxD , boxE , boxF , boxG ,  ground]);
