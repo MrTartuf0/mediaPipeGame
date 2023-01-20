@@ -50,7 +50,7 @@ var boxD = Bodies.rectangle(550, -2000, 80, 80 , {
 });
 
 
-var boxE = Bodies.rectangle(550, -3000, 80, 80 , {
+var boxE = Bodies.rectangle(600, -3000, 80, 80 , {
     render: {
         sprite: {
             texture: "./coca-cola_80x80.png",
@@ -59,7 +59,7 @@ var boxE = Bodies.rectangle(550, -3000, 80, 80 , {
 });
 
 
-var boxF = Bodies.rectangle(550, -4000, 80, 80 , {
+var boxF = Bodies.rectangle(500, -4000, 80, 80 , {
     render: {
         sprite: {
             texture: "./coca-cola_80x80.png",
@@ -68,7 +68,7 @@ var boxF = Bodies.rectangle(550, -4000, 80, 80 , {
 });
 
 
-var boxG = Bodies.rectangle(550, -5000, 80, 80 , {
+var boxG = Bodies.rectangle(650, -5000, 80, 80 , {
     render: {
         sprite: {
             texture: "./coca-cola_80x80.png",
